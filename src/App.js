@@ -1,5 +1,4 @@
 import Box from "@mui/material/Box";
-import { useState } from "react";
 
 import { Game } from "./containers/Game";
 import { GameProvider } from "./contexts/GameProvider";

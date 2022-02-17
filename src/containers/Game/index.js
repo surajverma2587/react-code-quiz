@@ -5,7 +5,9 @@ import { GameForm } from "../../components/GameForm";
 import { useGame } from "../../hooks/useGame";
 
 export const Game = () => {
-  const { gameInProgress } = useGame();
+  const {
+    state: { gameInProgress },
+  } = useGame();
 
   return (
     <Container maxWidth="md">

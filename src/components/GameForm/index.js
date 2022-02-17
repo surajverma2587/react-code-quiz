@@ -7,16 +7,26 @@ import Button from "@mui/material/Button";
 import { useGame } from "../../hooks/useGame";
 
 export const GameForm = () => {
-  const { category, setCategory, setGameInProgress } = useGame();
+  const {
+    state: { category },
+    dispatch,
+  } = useGame();
 
   const onChange = (event) => {
-    setCategory(event.target.value);
+    // dispatch action CHANGE_CATEGORY payload "music"
+    dispatch({
+      type: "CHANGE_CATEGORY",
+      payload: event.target.value,
+    });
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    setGameInProgress(true);
+    // dispatch action START_GAME
+    dispatch({
+      type: "START_GAME",
+    });
   };
 
   return (
