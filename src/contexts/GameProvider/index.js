@@ -1,10 +1,13 @@
 import { createContext, useReducer } from "react";
 
+import { questions } from "../../data/questions";
+
 export const GameContext = createContext();
 
 const initialState = {
   gameInProgress: false,
   category: "sports",
+  questions: questions.sports,
 };
 
 const reducer = (state, action) => {
@@ -12,6 +15,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       gameInProgress: true,
+      questions: questions[state.category],
     };
   }
 

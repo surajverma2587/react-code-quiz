@@ -52,7 +52,7 @@ export const GameForm = () => {
       </FormControl>
       <FormControl sx={{ width: "100%" }} variant="standard">
         <Button fullWidth variant="contained" type="submit">
-          Contained
+          Start Quiz
         </Button>
       </FormControl>
     </form>

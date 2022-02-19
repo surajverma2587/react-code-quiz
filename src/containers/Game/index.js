@@ -3,20 +3,24 @@ import Box from "@mui/material/Box";
 
 import { GameForm } from "../../components/GameForm";
 import { useGame } from "../../hooks/useGame";
+import { Quiz } from "../../components/Quiz";
 
 export const Game = () => {
-  const {
-    state: { gameInProgress },
-  } = useGame();
+  const { state } = useGame();
 
+  console.log(state);
   return (
     <Container maxWidth="md">
-      {!gameInProgress && (
+      {!state.gameInProgress && (
         <Box component="section" sx={{ border: "1px solid black" }}>
           <GameForm />
         </Box>
       )}
-      {gameInProgress && <Box component="section">Quiz goes here</Box>}
+      {state.gameInProgress && (
+        <Box component="section">
+          <Quiz />
+        </Box>
+      )}
     </Container>
   );
 };
