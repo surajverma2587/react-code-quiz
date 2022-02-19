@@ -8,6 +8,7 @@ const initialState = {
   gameInProgress: false,
   category: "sports",
   questions: questions.sports,
+  percentComplete: 0,
 };
 
 const reducer = (state, action) => {
@@ -23,6 +24,13 @@ const reducer = (state, action) => {
     return {
       ...state,
       category: action.payload,
+    };
+  }
+
+  if (action.type === "NEXT_QUESTION") {
+    return {
+      ...state,
+      percentComplete: state.percentComplete + 100 / state.questions.length,
     };
   }
 

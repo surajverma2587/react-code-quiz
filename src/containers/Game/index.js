@@ -12,7 +12,7 @@ export const Game = () => {
   return (
     <Container maxWidth="md">
       {!state.gameInProgress && (
-        <Box component="section" sx={{ border: "1px solid black" }}>
+        <Box component="section">
           <GameForm />
         </Box>
       )}

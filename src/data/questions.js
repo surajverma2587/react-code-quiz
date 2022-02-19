@@ -47,17 +47,17 @@ export const questions = {
     {
       question: "Movie question 1",
       options: ["Movie 11", "Movie 22", "Movie 33", "Movie 44"],
-      correctOption: "Movie 1",
+      correctOption: "Movie 11",
     },
     {
       question: "Movie question 2",
       options: ["Movie 111", "Movie 222", "Movie 333", "Movie 444"],
-      correctOption: "Movie 2",
+      correctOption: "Movie 222",
     },
     {
       question: "Movie question 3",
-      options: ["Movie 1", "Movie 2", "Movie 3", "Movie 4"],
-      correctOption: "Movie 3",
+      options: ["Movie 1a", "Movie 2a", "Movie 3a", "Movie 4a"],
+      correctOption: "Movie 3a",
     },
     {
       question: "Movie question 4",
