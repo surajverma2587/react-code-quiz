@@ -13,9 +13,9 @@ export const Question = ({
   onClick,
 }) => {
   return (
-    <Box>
+    <Box sx={{ mt: "20px" }}>
       <FormControl>
-        <FormLabel id="demo-radio-buttons-group-label">
+        <FormLabel id="demo-radio-buttons-group-label" sx={{ mb: "20px" }}>
           {currentQuestion.question}
         </FormLabel>
         <RadioGroup name="radio-buttons-group" onChange={onChange}>
