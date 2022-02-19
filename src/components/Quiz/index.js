@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
 import { useGame } from "../../hooks/useGame";
+import { ProgressBar } from "../ProgressBar";
 
 export const Quiz = () => {
   const {
@@ -40,22 +41,7 @@ export const Quiz = () => {
 
   return (
     <div>
-      <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Box
-          sx={{ width: "100%", mr: 1, color: displayQuestion ? "" : "green" }}
-        >
-          <LinearProgress
-            variant="determinate"
-            value={percentComplete}
-            color={displayQuestion ? "primary" : "inherit"}
-          />
-        </Box>
-        <Box sx={{ minWidth: 35 }}>
-          <Typography variant="body2" color="text.secondary">{`${Math.round(
-            percentComplete
-          )}%`}</Typography>
-        </Box>
-      </Box>
+      <ProgressBar value={percentComplete} isComplete={displayQuestion} />
       {displayQuestion && (
         <Box>
           <FormControl>
