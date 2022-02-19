@@ -9,6 +9,8 @@ const initialState = {
   category: "sports",
   questions: questions.sports,
   percentComplete: 0,
+  score: 0,
+  results: [],
 };
 
 const reducer = (state, action) => {
@@ -28,9 +30,22 @@ const reducer = (state, action) => {
   }
 
   if (action.type === "NEXT_QUESTION") {
+    const { currentQuestionIndex, userAnswer } = action.payload;
+
+    const isCorrect =
+      userAnswer === state.questions[currentQuestionIndex].correctOption;
+
+    const resultObject = {
+      ...state.questions[currentQuestionIndex],
+      userAnswer,
+      isCorrect,
+    };
+
     return {
       ...state,
       percentComplete: state.percentComplete + 100 / state.questions.length,
+      score: isCorrect ? state.score + 1 : state.score,
+      results: [...state.results, resultObject],
     };
   }
 

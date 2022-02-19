@@ -9,6 +9,8 @@ export const Game = () => {
   const { state } = useGame();
   const layoutStyles = { p: "20px", mt: "20px" };
 
+  console.log(state);
+
   return (
     <Container maxWidth="md">
       {!state.gameInProgress && (
